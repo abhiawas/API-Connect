@@ -25,7 +25,7 @@ Publish the product in the catalog.
 
 Goto Developer portal and create one Application give any name, discription and redirecturi to your application.
 
-change the URL and other paramters in Postman and test your API.
+Change the host URL and Client Id, Secret and redirectUri  in Postman and test API.
 
 
 
