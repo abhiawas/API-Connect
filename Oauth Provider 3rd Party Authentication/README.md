@@ -20,7 +20,7 @@ Prerequisites:
 
 Application will be running on http://localhost:8080 
 
-Now download the API Yaml file "Oauth Provider 3rd Party Authentication" from repository and export it in API connect. 
+Now download the API Yaml file "Oauth Provider 3rd Party Authentication" from repository and export it in API connect. we have implemented Authorization Code and Client Credentials Grant in this implementation.
 Now download the Product Yaml file "Oauth Provider Product" from repository and export it in API connect.
 
 Publish the product in the catalog.
