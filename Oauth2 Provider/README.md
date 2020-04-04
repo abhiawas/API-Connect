@@ -7,10 +7,10 @@ More information can be extracted from IBM Official website:
 https://www.ibm.com/support/knowledgecenter/SSMNED_5.0.0/com.ibm.apic.toolkit.doc/tapim_sec_api_config_scheme_oauth_endpoint.html
 
 Now download the API Yaml file "Oauth2 Provider" from repository and export it in API connect. we have implemented following Grants in this implementation
-Authorization Code
-Resource Onwer
-Implicit Flow
-Client Credentials 
+1) Authorization Code
+2) Resource Onwer
+3) Implicit Flow
+4) Client Credentials 
 
 we use Introsecption URL to get the details about Access Token and related information.
 
