@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "93c4bdb1-2820-4baf-ac09-35fa725e5d7b",
+		"name": "OAuth 3rd Party Authentication ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Authorize Code Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Awasthi",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Abhishek",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.us-south.apiconnect.appdomain.cloud/xawdcvgmailcom-dev/sb/oauth2/authorize?client_id=55c1fa6a-4eb2-4da2-b846-c0d6459abb74&response_type=code&scope=accounts&redirect_uri=https://directpay.mybluemix.net",
+					"protocol": "https",
+					"host": [
+						"api",
+						"us-south",
+						"apiconnect",
+						"appdomain",
+						"cloud"
+					],
+					"path": [
+						"xawdcvgmailcom-dev",
+						"sb",
+						"oauth2",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "55c1fa6a-4eb2-4da2-b846-c0d6459abb74"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "scope",
+							"value": "accounts"
+						},
+						{
+							"key": "state",
+							"value": "H2bT2oW3lD0pI1qO8xF1fX2fN5dB5kR7aF4hO2qM8gV3wC4yG",
+							"disabled": true
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://directpay.mybluemix.net"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token from Authorize Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "AAKT_B6HDKdWlp__jthss_h5nI4lrobjdyvIRKauKO5WkTpFVu9T4HNWAm5ad3KfvOsdiwWkG4YrZatGfFuzhJrR0MseBFld_eaHr7cfbcGLBA",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "7543d455-7644-41d5-9355-896773d44d58",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "oM5eI4aO0xY4cW4iJ1vS6kY5tW1gN4cO3tJ2nV1oP1rL8dP0bG",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.us-south.apiconnect.appdomain.cloud/xawdcvgmailcom-dev/sb/dummyoauth/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"us-south",
+						"apiconnect",
+						"appdomain",
+						"cloud"
+					],
+					"path": [
+						"xawdcvgmailcom-dev",
+						"sb",
+						"dummyoauth",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token from Client Credentials Grant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "7543d455-7644-41d5-9355-896773d44d58",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "oM5eI4aO0xY4cW4iJ1vS6kY5tW1gN4cO3tJ2nV1oP1rL8dP0bG",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "accounts",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.us-south.apiconnect.appdomain.cloud/xawdcvgmailcom-dev/sb/dummyoauth/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"us-south",
+						"apiconnect",
+						"appdomain",
+						"cloud"
+					],
+					"path": [
+						"xawdcvgmailcom-dev",
+						"sb",
+						"dummyoauth",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
