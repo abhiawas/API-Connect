@@ -1,0 +1,140 @@
+---
+swagger: "2.0"
+info:
+  x-ibm-name: "accounts"
+  title: "Accounts"
+  version: "1.0.0"
+schemes:
+- "https"
+host: "$(catalog.host)"
+basePath: "/my-bank-accounts"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+securityDefinitions:
+  OAuth:
+    type: "oauth2"
+    description: ""
+    flow: "application"
+    scopes:
+      accountsAccess: ""
+    tokenUrl: "https://api.us-south.apiconnect.appdomain.cloud/xawdcvgmailcom-dev/sb/open-banking/oauth2/token"
+security:
+- OAuth:
+  - "accountsAccess"
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  assembly:
+    execute:
+    - operation-switch:
+        title: "operation-switch"
+        case:
+        - operations:
+          - verb: "post"
+            path: "/account-access-consents"
+          execute:
+          - gatewayscript:
+              title: "gatewayscript"
+              version: "1.0.0"
+              source: "var response = {\r\n                  \"Data\": {\r\n     \
+                \               \"ConsentId\": \"urn-alphabank-intent-88379\",\r\n\
+                \                    \"Status\": \"AwaitingAuthorisation\", \r\n \
+                \                   \"StatusUpdateDateTime\": \"2017-05-02T00:00:00+00:00\"\
+                ,\r\n                    \"CreationDateTime\": \"2017-05-02T00:00:00+00:00\"\
+                ,\r\n                    \"Permissions\": [\r\n                  \
+                \    \"ReadAccountsDetail\",\r\n                      \"ReadBalances\"\
+                ,\r\n                      \"ReadBeneficiariesDetail\",\r\n      \
+                \                \"ReadDirectDebits\",\r\n                      \"\
+                ReadProducts\",\r\n                      \"ReadStandingOrdersDetail\"\
+                ,\r\n                      \"ReadTransactionsCredits\",\r\n      \
+                \                \"ReadTransactionsDebits\",\r\n                 \
+                \     \"ReadTransactionsDetail\",\r\n                      \"ReadOffers\"\
+                ,\r\n                      \"ReadPAN\",\r\n                      \"\
+                ReadParty\",\r\n                      \"ReadPartyPSU\",\r\n      \
+                \                \"ReadScheduledPaymentsDetail\",\r\n            \
+                \          \"ReadStatementsDetail\"\r\n                    ],\r\n\
+                \                    \"ExpirationDateTime\": \"2017-08-02T00:00:00+00:00\"\
+                ,\r\n                    \"TransactionFromDateTime\": \"2017-05-03T00:00:00+00:00\"\
+                ,\r\n                    \"TransactionToDateTime\": \"2017-12-03T00:00:00+00:00\"\
+                \r\n                \r\n                  },\r\n                 \
+                \ \"Risk\": {},\r\n                  \"Links\": {\r\n            \
+                \        \"Self\": \"https://api.alphabank.com/open-banking/v3.1/aisp/account-access-consents/urn-alphabank-intent-88379\"\
+                \r\n                  },\r\n                  \"Meta\": {\r\n    \
+                \                \"TotalPages\": 1\r\n                  }\r\n    \
+                \            }\r\napim.setvariable('message.body',response);\r\napim.output('application/json');"
+        - operations:
+          - verb: "get"
+            path: "/account-access-consents/{ConsentId}"
+          execute: []
+        - operations:
+          - verb: "delete"
+            path: "/account-access-consents/{ConsentId}"
+          execute: []
+        otherwise: []
+        version: "1.0.0"
+  phase: "realized"
+paths:
+  /account-access-consents:
+    post:
+      responses:
+        201:
+          description: "Created"
+          schema:
+            type: "string"
+            format: "date-time"
+      parameters:
+      - name: "body"
+        required: true
+        in: "body"
+        schema:
+          $ref: "#/definitions/consentRequest"
+      - $ref: "#/parameters/x-fapi-auth-date"
+      - $ref: "#/parameters/x-fapi-customer-ip-address"
+      - $ref: "#/parameters/x-fapi-interaction-id"
+      - $ref: "#/parameters/Authorization"
+  /account-access-consents/{ConsentId}:
+    get:
+      responses:
+        200:
+          description: "200 OK"
+    delete:
+      responses:
+        200:
+          description: "200 OK"
+tags: []
+parameters:
+  x-fapi-auth-date:
+    name: "x-fapi-auth-date"
+    type: "string"
+    required: false
+    in: "header"
+  x-fapi-customer-ip-address:
+    name: "x-fapi-customer-ip-address"
+    type: "string"
+    required: false
+    in: "header"
+  x-fapi-interaction-id:
+    name: "x-fapi-interaction-id"
+    type: "string"
+    required: false
+    in: "header"
+  Authorization:
+    name: "Authorization"
+    type: "string"
+    required: false
+    in: "header"
+definitions:
+  consentRequest:
+    properties:
+      Data:
+        type: "object"
+    additionalProperties: false
+  consentResponse:
+    properties:
+      new-property-1:
+        type: "string"
+    additionalProperties: false

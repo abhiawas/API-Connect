@@ -1,0 +1,1160 @@
+{
+	"info": {
+		"_postman_id": "aaa27255-ac8a-42e0-ae67-cf8825d2b685",
+		"name": "OAuth2 Provider",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OAuth2 Provider",
+			"item": [
+				{
+					"name": "conf-az-get-code",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic a3JpdGk6a3JpdGk="
+							}
+						],
+						"url": {
+							"raw": "{{url}}/confidential/oauth2/authorize?response_type=code&scope=scope1&client_id={{client_id}}&redirect_uri=https://localhost",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"confidential",
+								"oauth2",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "scope",
+									"value": "scope1"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https://localhost"
+								}
+							]
+						},
+						"description": "Make sure to disable \"follow redirects\"\nCopy the code from Location header"
+					},
+					"response": [
+						{
+							"name": "approval",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic dXNlcjE6dXNlcjE="
+									}
+								],
+								"url": {
+									"raw": "{{url}}/metadata/oauth2/authorize?response_type=code&scope=read&client_id={{client_id}}&redirect_uri=https://example.com/redirect",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"metadata",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "scope",
+											"value": "read"
+										},
+										{
+											"key": "client_id",
+											"value": "{{client_id}}"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "https://example.com/redirect"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "false",
+									"name": "Access-Control-Allow-Credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET",
+									"name": "Access-Control-Allow-Methods",
+									"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID",
+									"name": "Access-Control-Expose-Headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, max-age=0, must-revalidate",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; style-src 'unsafe-inline'",
+									"name": "Content-Security-Policy",
+									"description": "Custom header"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 08 Aug 1988 08:08:08 GMT",
+									"name": "Expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "Frame-Options",
+									"description": "Custom header"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Backside-Transport",
+									"value": "FAIL FAIL",
+									"name": "X-Backside-Transport",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"body": "<html lang=\"en\" xml:lang=\"en\">\n<head><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\">\n\n<meta http-equiv=\"Cache-Control\" content=\"no-cache\">\n<meta http-equiv=\"Pragma\" content=\"no-cache\">\n<meta http-equiv=\"Expires\" content=\"-1\">\n<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">\n\n<link rel=\"SHORTCUT ICON\" href=\"/images/login/favicon.ico\">\n<title>Request for Permission</title>\n\n<style media=\"screen\" type=\"text/css\">\nbody {\n\tbackground-color: #cccccc;\n\tpadding: 0;\n\tmargin: 0;\n}\n.page {\n\twidth: 100%;\n\theight: 100%;\n\tpadding: 0;\n\tmargin: 0;\n}\nh1 {\n\tfont-family: Helvetica, Arial !important;\n\tfont-weight: 200 !important;\n\tfont-size: 27px;\n\tcolor: #767676;\n}\n.white-box {\n\tbackground: #ffffff;\n\tbox-shadow: 0 0 15px #333;\n\tposition: relative;\n\ttop: 50%;\n\tleft: 50%;\n\tmargin-left: -300px;\n\t-webkit-transform: translateY(-50%);\n\ttransform: translateY(-50%);\n\twidth: 600px;\n\theight: 350px;\n\tpadding: 10px 40px;\n\tfont-family: Arial, Tahoma, Verdana;\n\tfont-size: 13px;\n\tfont-weight: 200 !important;\n\tbox-sizing: border-box;\n}\n.buttonBar {\n\ttext-align: right;\n\tposition: absolute;\n\tbottom: 20px;\n\tright: 40px;\n}\nbutton {\n\tborder-radius: 3px;\n\tborder: none;\n\tcursor: pointer;\n\tfont-family: Arial, Verdana, Helvetica, sans-serif;\n\tfont-size: 14px;\n\tfont-weight: bold;\n\tpadding: 5px 11px;\n\theight: 27px;\n\tbackground-color: #ffffff;\n}\n.cancel {\n\tcolor: #767676;\n}\n.cancel:hover,\n.submit:hover {\n\tbackground: rgba(158,158,158,0.2);\n}\n.cancel:hover {\n\tcolor: #333;\n}\n.submit {\n\tcolor: #106cc8;\n} \n@media all and (max-width: 600px) {\n\t.white-box {\n\t\twidth: 100%;\n\t\theight: auto;\n\t\tleft: 0;\n\t\tmargin-left: 0;\n\t}\n\t.buttonBar {\n\t\ttext-align: right;\n\t\tposition: inherit;\n\t}\n}\n.scrollable {\n    overflow: auto;\n    height: 75px;\n}\ntd {\n    text-align: left;\n}\ntable {\n    white-space: nowrap;\n    border-collapse: collapse;\n    border: \"0\";\n    font-size: 12px;\n}\n</style>\n</head>\n<body class=\"login\">\n  <div class=\"page\">\n    <div id=\"box\" class=\"white-box\">\n      <form method=\"post\" enctype=\"application/x-www-form-urlencoded\" action=\"https://sjsldev059.dev.ciondemand.com/krithika/sb/metadata/oauth2/authorize\">\n        <h1>Request for Permission</h1>\n        <div id=\"deviceName\">Welcome <span style=\"font-weight:bold;\">user1</span></div>\n        <div class=\"inputWrapper\">\n          <p><span style=\"font-weight:bold;\">metadata</span> is requesting your permission to access: <br><div class=\"scrollable\"><table><tr><td>read: \n              </td><td>Description 1</td></tr></table></div><br>\n          Select \"Allow Access\" to grant the request or \"No Thanks\" to reject it.</p>\n          <p>Clicking \"Allow Access\" will redirect you to <span style=\"font-weight:bold;\">https://example.com/redirect</span>.</p>\n          <input type=\"hidden\" name=\"dp-state\" value=\"VRxgjNdBBq2K1V5WzUAYLA\">\n          <input type=\"hidden\" name=\"resource-owner\" value=\"user1\">\n          <input type=\"hidden\" name=\"dp-data\" value=\"0-2:158287338:158287638:code:7-KUgJBl-PY:\">\n          <input type=\"hidden\" name=\"redirect_uri\" value=\"https://example.com/redirect\">\n          <input type=\"hidden\" name=\"scope\" value=\"read\">\n          <input type=\"hidden\" name=\"original-url\" value=\"https://169.54.149.59:443/krithika/sb/metadata/oauth2/authorize?response_type=code&amp;scope=read&amp;client_id=da7edd70-3960-4bd1-8263-76ca76af3fbf&amp;redirect_uri=https://example.com/redirect\">\n          <input type=\"hidden\" name=\"client_id\" value=\"da7edd70-3960-4bd1-8263-76ca76af3fbf\">\n          <input type=\"hidden\" name=\"response_type\" value=\"code\">\n          <div class=\"buttonBar\">\n            <button class=\"cancel\" type=\"submit\" name=\"approve\" value=\"false\">No Thanks</button>\n            <button class=\"submit\" type=\"submit\" name=\"approve\" value=\"true\">Allow Access</button>\n          </div>\n          \n        </div>\n      </form>\n    </div> \n  </div>\n</body>\n</html>"
+						},
+						{
+							"name": "approval",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic dXNlcjE6dXNlcjE="
+									}
+								],
+								"url": {
+									"raw": "{{url}}/metadata/oauth2/authorize?response_type=code&scope=read&client_id={{client_id}}&redirect_uri=https://example.com/redirect",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"metadata",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "scope",
+											"value": "read"
+										},
+										{
+											"key": "client_id",
+											"value": "{{client_id}}"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "https://example.com/redirect"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "false",
+									"name": "Access-Control-Allow-Credentials",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, max-age=0, must-revalidate",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; style-src 'unsafe-inline'",
+									"name": "Content-Security-Policy",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 08 Aug 1988 08:08:08 GMT",
+									"name": "Expires",
+									"description": ""
+								},
+								{
+									"key": "Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "X-Backside-Transport",
+									"value": "FAIL FAIL",
+									"name": "X-Backside-Transport",
+									"description": ""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"body": "<html lang=\"en\" xml:lang=\"en\">\n<head><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\">\n\n<meta http-equiv=\"Cache-Control\" content=\"no-cache\">\n<meta http-equiv=\"Pragma\" content=\"no-cache\">\n<meta http-equiv=\"Expires\" content=\"-1\">\n<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">\n\n<link rel=\"SHORTCUT ICON\" href=\"/images/login/favicon.ico\">\n<title>Request for Permission</title>\n\n<style media=\"screen\" type=\"text/css\">\nbody {\n  background-color: #cccccc;\n  padding: 0;\n  margin: 0;\n}\n.page {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\nh1 {\n  font-family: Helvetica, Arial !important;\n  font-weight: 200 !important;\n  font-size: 27px;\n  color: #767676;\n}\n.white-box {\n  background: #ffffff;\n  box-shadow: 0 0 15px #333;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  margin-left: -300px;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  width: 600px;\n  height: 350px;\n  padding: 10px 40px;\n  font-family: Arial, Tahoma, Verdana;\n  font-size: 13px;\n  font-weight: 200 !important;\n  box-sizing: border-box;\n}\n.buttonBar {\n  text-align: right;\n  position: absolute;\n  bottom: 20px;\n  right: 40px;\n}\nbutton {\n  border-radius: 3px;\n  border: none;\n  cursor: pointer;\n  font-family: Arial, Verdana, Helvetica, sans-serif;\n  font-size: 14px;\n  font-weight: bold;\n  padding: 5px 11px;\n  height: 27px;\n  background-color: #ffffff;\n}\n.cancel {\n  color: #767676;\n}\n.cancel:hover,\n.submit:hover {\n  background: rgba(158,158,158,0.2);\n}\n.cancel:hover {\n  color: #333;\n}\n.submit {\n  color: #106cc8;\n} \n@media all and (max-width: 600px) {\n  .white-box {\n    width: 100%;\n    height: auto;\n    left: 0;\n    margin-left: 0;\n  }\n  .buttonBar {\n    text-align: right;\n    position: inherit;\n  }\n}\n.scrollable {\n    overflow: auto;\n    height: 75px;\n}\ntd {\n    text-align: left;\n}\ntable {\n    white-space: nowrap;\n    border-collapse: collapse;\n    border: \"0\";\n    font-size: 12px;\n}\n</style>\n</head>\n<body class=\"login\">\n  <div class=\"page\">\n    <div id=\"box\" class=\"white-box\">\n      <form method=\"post\" enctype=\"application/x-www-form-urlencoded\" action=\"https://sjsldev059.dev.ciondemand.com/krithika/sb/metadata/oauth2/authorize\">\n        <h1>Request for Permission</h1>\n        <div id=\"deviceName\">Welcome <span style=\"font-weight:bold;\">user1</span></div>\n        <div class=\"inputWrapper\">\n          <p><span style=\"font-weight:bold;\">metadata</span> is requesting your permission to access: <br><div class=\"scrollable\"><table><tr><td>read: \n              </td><td>Description 1</td></tr></table></div><br>\n          Select \"Allow Access\" to grant the request or \"No Thanks\" to reject it.</p>\n          <p>Clicking \"Allow Access\" will redirect you to <span style=\"font-weight:bold;\">https://example.com/redirect</span>.</p>\n          <input type=\"hidden\" name=\"dp-state\" value=\"VRxgjNdBBq2K1V5WzUAYLA\">\n          <input type=\"hidden\" name=\"resource-owner\" value=\"user1\">\n          <input type=\"hidden\" name=\"dp-data\" value=\"0-2:158287338:158287638:code:7-KUgJBl-PY:\">\n          <input type=\"hidden\" name=\"redirect_uri\" value=\"https://example.com/redirect\">\n          <input type=\"hidden\" name=\"scope\" value=\"read\">\n          <input type=\"hidden\" name=\"original-url\" value=\"https://169.54.149.59:443/krithika/sb/metadata/oauth2/authorize?response_type=code&amp;scope=read&amp;client_id=da7edd70-3960-4bd1-8263-76ca76af3fbf&amp;redirect_uri=https://example.com/redirect\">\n          <input type=\"hidden\" name=\"client_id\" value=\"da7edd70-3960-4bd1-8263-76ca76af3fbf\">\n          <input type=\"hidden\" name=\"response_type\" value=\"code\">\n          <div class=\"buttonBar\">\n            <button class=\"cancel\" type=\"submit\" name=\"approve\" value=\"false\">No Thanks</button>\n            <button class=\"submit\" type=\"submit\" name=\"approve\" value=\"true\">Allow Access</button>\n          </div>\n          \n        </div>\n      </form>\n    </div> \n  </div>\n</body>\n</html>"
+						},
+						{
+							"name": "approval",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic dXNlcjE6dXNlcjE="
+									}
+								],
+								"url": {
+									"raw": "{{url}}/metadata/oauth2/authorize?response_type=code&scope=read&client_id={{client_id}}&redirect_uri=https://example.com/redirect",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"metadata",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "scope",
+											"value": "read"
+										},
+										{
+											"key": "client_id",
+											"value": "{{client_id}}"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "https://example.com/redirect"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "false",
+									"name": "Access-Control-Allow-Credentials",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, max-age=0, must-revalidate",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; style-src 'unsafe-inline'",
+									"name": "Content-Security-Policy",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 08 Aug 1988 08:08:08 GMT",
+									"name": "Expires",
+									"description": ""
+								},
+								{
+									"key": "Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "X-Backside-Transport",
+									"value": "FAIL FAIL",
+									"name": "X-Backside-Transport",
+									"description": ""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"body": "<html lang=\"en\" xml:lang=\"en\">\n<head><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\">\n\n<meta http-equiv=\"Cache-Control\" content=\"no-cache\">\n<meta http-equiv=\"Pragma\" content=\"no-cache\">\n<meta http-equiv=\"Expires\" content=\"-1\">\n<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">\n\n<link rel=\"SHORTCUT ICON\" href=\"/images/login/favicon.ico\">\n<title>Request for Permission</title>\n\n<style media=\"screen\" type=\"text/css\">\nbody {\n  background-color: #cccccc;\n  padding: 0;\n  margin: 0;\n}\n.page {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\nh1 {\n  font-family: Helvetica, Arial !important;\n  font-weight: 200 !important;\n  font-size: 27px;\n  color: #767676;\n}\n.white-box {\n  background: #ffffff;\n  box-shadow: 0 0 15px #333;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  margin-left: -300px;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  width: 600px;\n  height: 350px;\n  padding: 10px 40px;\n  font-family: Arial, Tahoma, Verdana;\n  font-size: 13px;\n  font-weight: 200 !important;\n  box-sizing: border-box;\n}\n.buttonBar {\n  text-align: right;\n  position: absolute;\n  bottom: 20px;\n  right: 40px;\n}\nbutton {\n  border-radius: 3px;\n  border: none;\n  cursor: pointer;\n  font-family: Arial, Verdana, Helvetica, sans-serif;\n  font-size: 14px;\n  font-weight: bold;\n  padding: 5px 11px;\n  height: 27px;\n  background-color: #ffffff;\n}\n.cancel {\n  color: #767676;\n}\n.cancel:hover,\n.submit:hover {\n  background: rgba(158,158,158,0.2);\n}\n.cancel:hover {\n  color: #333;\n}\n.submit {\n  color: #106cc8;\n} \n@media all and (max-width: 600px) {\n  .white-box {\n    width: 100%;\n    height: auto;\n    left: 0;\n    margin-left: 0;\n  }\n  .buttonBar {\n    text-align: right;\n    position: inherit;\n  }\n}\n.scrollable {\n    overflow: auto;\n    height: 75px;\n}\ntd {\n    text-align: left;\n}\ntable {\n    white-space: nowrap;\n    border-collapse: collapse;\n    border: \"0\";\n    font-size: 12px;\n}\n</style>\n</head>\n<body class=\"login\">\n  <div class=\"page\">\n    <div id=\"box\" class=\"white-box\">\n      <form method=\"post\" enctype=\"application/x-www-form-urlencoded\" action=\"https://sjsldev059.dev.ciondemand.com/krithika/sb/metadata/oauth2/authorize\">\n        <h1>Request for Permission</h1>\n        <div id=\"deviceName\">Welcome <span style=\"font-weight:bold;\">user1</span></div>\n        <div class=\"inputWrapper\">\n          <p><span style=\"font-weight:bold;\">metadata</span> is requesting your permission to access: <br><div class=\"scrollable\"><table><tr><td>read: \n              </td><td>Description 1</td></tr></table></div><br>\n          Select \"Allow Access\" to grant the request or \"No Thanks\" to reject it.</p>\n          <p>Clicking \"Allow Access\" will redirect you to <span style=\"font-weight:bold;\">https://example.com/redirect</span>.</p>\n          <input type=\"hidden\" name=\"dp-state\" value=\"VRxgjNdBBq2K1V5WzUAYLA\">\n          <input type=\"hidden\" name=\"resource-owner\" value=\"user1\">\n          <input type=\"hidden\" name=\"dp-data\" value=\"0-2:158287338:158287638:code:7-KUgJBl-PY:\">\n          <input type=\"hidden\" name=\"redirect_uri\" value=\"https://example.com/redirect\">\n          <input type=\"hidden\" name=\"scope\" value=\"read\">\n          <input type=\"hidden\" name=\"original-url\" value=\"https://169.54.149.59:443/krithika/sb/metadata/oauth2/authorize?response_type=code&amp;scope=read&amp;client_id=da7edd70-3960-4bd1-8263-76ca76af3fbf&amp;redirect_uri=https://example.com/redirect\">\n          <input type=\"hidden\" name=\"client_id\" value=\"da7edd70-3960-4bd1-8263-76ca76af3fbf\">\n          <input type=\"hidden\" name=\"response_type\" value=\"code\">\n          <div class=\"buttonBar\">\n            <button class=\"cancel\" type=\"submit\" name=\"approve\" value=\"false\">No Thanks</button>\n            <button class=\"submit\" type=\"submit\" name=\"approve\" value=\"true\">Allow Access</button>\n          </div>\n          \n        </div>\n      </form>\n    </div> \n  </div>\n</body>\n</html>"
+						},
+						{
+							"name": "approval",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic dXNlcjE6dXNlcjE="
+									}
+								],
+								"url": {
+									"raw": "{{url}}/metadata/oauth2/authorize?response_type=code&scope=read&client_id={{client_id}}&redirect_uri=https://example.com/redirect",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"metadata",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "scope",
+											"value": "read"
+										},
+										{
+											"key": "client_id",
+											"value": "{{client_id}}"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "https://example.com/redirect"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "false",
+									"name": "Access-Control-Allow-Credentials",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, max-age=0, must-revalidate",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; style-src 'unsafe-inline'",
+									"name": "Content-Security-Policy",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 08 Aug 1988 08:08:08 GMT",
+									"name": "Expires",
+									"description": ""
+								},
+								{
+									"key": "Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "X-Backside-Transport",
+									"value": "FAIL FAIL",
+									"name": "X-Backside-Transport",
+									"description": ""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"body": "<html lang=\"en\" xml:lang=\"en\">\n<head><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\">\n\n<meta http-equiv=\"Cache-Control\" content=\"no-cache\">\n<meta http-equiv=\"Pragma\" content=\"no-cache\">\n<meta http-equiv=\"Expires\" content=\"-1\">\n<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">\n\n<link rel=\"SHORTCUT ICON\" href=\"/images/login/favicon.ico\">\n<title>Request for Permission</title>\n\n<style media=\"screen\" type=\"text/css\">\nbody {\n  background-color: #cccccc;\n  padding: 0;\n  margin: 0;\n}\n.page {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\nh1 {\n  font-family: Helvetica, Arial !important;\n  font-weight: 200 !important;\n  font-size: 27px;\n  color: #767676;\n}\n.white-box {\n  background: #ffffff;\n  box-shadow: 0 0 15px #333;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  margin-left: -300px;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  width: 600px;\n  height: 350px;\n  padding: 10px 40px;\n  font-family: Arial, Tahoma, Verdana;\n  font-size: 13px;\n  font-weight: 200 !important;\n  box-sizing: border-box;\n}\n.buttonBar {\n  text-align: right;\n  position: absolute;\n  bottom: 20px;\n  right: 40px;\n}\nbutton {\n  border-radius: 3px;\n  border: none;\n  cursor: pointer;\n  font-family: Arial, Verdana, Helvetica, sans-serif;\n  font-size: 14px;\n  font-weight: bold;\n  padding: 5px 11px;\n  height: 27px;\n  background-color: #ffffff;\n}\n.cancel {\n  color: #767676;\n}\n.cancel:hover,\n.submit:hover {\n  background: rgba(158,158,158,0.2);\n}\n.cancel:hover {\n  color: #333;\n}\n.submit {\n  color: #106cc8;\n} \n@media all and (max-width: 600px) {\n  .white-box {\n    width: 100%;\n    height: auto;\n    left: 0;\n    margin-left: 0;\n  }\n  .buttonBar {\n    text-align: right;\n    position: inherit;\n  }\n}\n.scrollable {\n    overflow: auto;\n    height: 75px;\n}\ntd {\n    text-align: left;\n}\ntable {\n    white-space: nowrap;\n    border-collapse: collapse;\n    border: \"0\";\n    font-size: 12px;\n}\n</style>\n</head>\n<body class=\"login\">\n  <div class=\"page\">\n    <div id=\"box\" class=\"white-box\">\n      <form method=\"post\" enctype=\"application/x-www-form-urlencoded\" action=\"https://sjsldev059.dev.ciondemand.com/krithika/sb/metadata/oauth2/authorize\">\n        <h1>Request for Permission</h1>\n        <div id=\"deviceName\">Welcome <span style=\"font-weight:bold;\">user1</span></div>\n        <div class=\"inputWrapper\">\n          <p><span style=\"font-weight:bold;\">metadata</span> is requesting your permission to access: <br><div class=\"scrollable\"><table><tr><td>read: \n              </td><td>Description 1</td></tr></table></div><br>\n          Select \"Allow Access\" to grant the request or \"No Thanks\" to reject it.</p>\n          <p>Clicking \"Allow Access\" will redirect you to <span style=\"font-weight:bold;\">https://example.com/redirect</span>.</p>\n          <input type=\"hidden\" name=\"dp-state\" value=\"VRxgjNdBBq2K1V5WzUAYLA\">\n          <input type=\"hidden\" name=\"resource-owner\" value=\"user1\">\n          <input type=\"hidden\" name=\"dp-data\" value=\"0-2:158287338:158287638:code:7-KUgJBl-PY:\">\n          <input type=\"hidden\" name=\"redirect_uri\" value=\"https://example.com/redirect\">\n          <input type=\"hidden\" name=\"scope\" value=\"read\">\n          <input type=\"hidden\" name=\"original-url\" value=\"https://169.54.149.59:443/krithika/sb/metadata/oauth2/authorize?response_type=code&amp;scope=read&amp;client_id=da7edd70-3960-4bd1-8263-76ca76af3fbf&amp;redirect_uri=https://example.com/redirect\">\n          <input type=\"hidden\" name=\"client_id\" value=\"da7edd70-3960-4bd1-8263-76ca76af3fbf\">\n          <input type=\"hidden\" name=\"response_type\" value=\"code\">\n          <div class=\"buttonBar\">\n            <button class=\"cancel\" type=\"submit\" name=\"approve\" value=\"false\">No Thanks</button>\n            <button class=\"submit\" type=\"submit\" name=\"approve\" value=\"true\">Allow Access</button>\n          </div>\n          \n        </div>\n      </form>\n    </div> \n  </div>\n</body>\n</html>"
+						},
+						{
+							"name": "approval",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic dXNlcjE6dXNlcjE="
+									}
+								],
+								"url": {
+									"raw": "{{url}}/metadata/oauth2/authorize?response_type=code&scope=read&client_id={{client_id}}&redirect_uri=https://example.com/redirect",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"metadata",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "scope",
+											"value": "read"
+										},
+										{
+											"key": "client_id",
+											"value": "{{client_id}}"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "https://example.com/redirect"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "false",
+									"name": "Access-Control-Allow-Credentials",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "APIm-Debug-Trans-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-Global-Transaction-ID",
+									"name": "Access-Control-Expose-Headers",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, max-age=0, must-revalidate",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self'; style-src 'unsafe-inline'",
+									"name": "Content-Security-Policy",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 08 Aug 1988 08:08:08 GMT",
+									"name": "Expires",
+									"description": ""
+								},
+								{
+									"key": "Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "X-Backside-Transport",
+									"value": "FAIL FAIL",
+									"name": "X-Backside-Transport",
+									"description": ""
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"body": "<html lang=\"en\" xml:lang=\"en\">\n<head><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\">\n\n<meta http-equiv=\"Cache-Control\" content=\"no-cache\">\n<meta http-equiv=\"Pragma\" content=\"no-cache\">\n<meta http-equiv=\"Expires\" content=\"-1\">\n<meta http-equiv=\"Content-type\" content=\"text/html;charset=UTF-8\">\n\n<link rel=\"SHORTCUT ICON\" href=\"/images/login/favicon.ico\">\n<title>Request for Permission</title>\n\n<style media=\"screen\" type=\"text/css\">\nbody {\n  background-color: #cccccc;\n  padding: 0;\n  margin: 0;\n}\n.page {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\nh1 {\n  font-family: Helvetica, Arial !important;\n  font-weight: 200 !important;\n  font-size: 27px;\n  color: #767676;\n}\n.white-box {\n  background: #ffffff;\n  box-shadow: 0 0 15px #333;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  margin-left: -300px;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  width: 600px;\n  height: 350px;\n  padding: 10px 40px;\n  font-family: Arial, Tahoma, Verdana;\n  font-size: 13px;\n  font-weight: 200 !important;\n  box-sizing: border-box;\n}\n.buttonBar {\n  text-align: right;\n  position: absolute;\n  bottom: 20px;\n  right: 40px;\n}\nbutton {\n  border-radius: 3px;\n  border: none;\n  cursor: pointer;\n  font-family: Arial, Verdana, Helvetica, sans-serif;\n  font-size: 14px;\n  font-weight: bold;\n  padding: 5px 11px;\n  height: 27px;\n  background-color: #ffffff;\n}\n.cancel {\n  color: #767676;\n}\n.cancel:hover,\n.submit:hover {\n  background: rgba(158,158,158,0.2);\n}\n.cancel:hover {\n  color: #333;\n}\n.submit {\n  color: #106cc8;\n} \n@media all and (max-width: 600px) {\n  .white-box {\n    width: 100%;\n    height: auto;\n    left: 0;\n    margin-left: 0;\n  }\n  .buttonBar {\n    text-align: right;\n    position: inherit;\n  }\n}\n.scrollable {\n    overflow: auto;\n    height: 75px;\n}\ntd {\n    text-align: left;\n}\ntable {\n    white-space: nowrap;\n    border-collapse: collapse;\n    border: \"0\";\n    font-size: 12px;\n}\n</style>\n</head>\n<body class=\"login\">\n  <div class=\"page\">\n    <div id=\"box\" class=\"white-box\">\n      <form method=\"post\" enctype=\"application/x-www-form-urlencoded\" action=\"https://sjsldev059.dev.ciondemand.com/krithika/sb/metadata/oauth2/authorize\">\n        <h1>Request for Permission</h1>\n        <div id=\"deviceName\">Welcome <span style=\"font-weight:bold;\">user1</span></div>\n        <div class=\"inputWrapper\">\n          <p><span style=\"font-weight:bold;\">metadata</span> is requesting your permission to access: <br><div class=\"scrollable\"><table><tr><td>read: \n              </td><td>Description 1</td></tr></table></div><br>\n          Select \"Allow Access\" to grant the request or \"No Thanks\" to reject it.</p>\n          <p>Clicking \"Allow Access\" will redirect you to <span style=\"font-weight:bold;\">https://example.com/redirect</span>.</p>\n          <input type=\"hidden\" name=\"dp-state\" value=\"VRxgjNdBBq2K1V5WzUAYLA\">\n          <input type=\"hidden\" name=\"resource-owner\" value=\"user1\">\n          <input type=\"hidden\" name=\"dp-data\" value=\"0-2:158287338:158287638:code:7-KUgJBl-PY:\">\n          <input type=\"hidden\" name=\"redirect_uri\" value=\"https://example.com/redirect\">\n          <input type=\"hidden\" name=\"scope\" value=\"read\">\n          <input type=\"hidden\" name=\"original-url\" value=\"https://169.54.149.59:443/krithika/sb/metadata/oauth2/authorize?response_type=code&amp;scope=read&amp;client_id=da7edd70-3960-4bd1-8263-76ca76af3fbf&amp;redirect_uri=https://example.com/redirect\">\n          <input type=\"hidden\" name=\"client_id\" value=\"da7edd70-3960-4bd1-8263-76ca76af3fbf\">\n          <input type=\"hidden\" name=\"response_type\" value=\"code\">\n          <div class=\"buttonBar\">\n            <button class=\"cancel\" type=\"submit\" name=\"approve\" value=\"false\">No Thanks</button>\n            <button class=\"submit\" type=\"submit\" name=\"approve\" value=\"true\">Allow Access</button>\n          </div>\n          \n        </div>\n      </form>\n    </div> \n  </div>\n</body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "conf-az-code-to-token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "AAI653JUR87-ipquGPOr4gSXXzDoBV1wI70LJZKrtx8vk4AAmxOV-GQHNAxFp0a7PToTay20dCBdXvPcLM5h2nje5le-Zq2Ekk5H71IGpF8dhA",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "scope1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/oauth2/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "conf-implicit-grant-type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "response_type",
+									"value": "token",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "scope1",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "kriti",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "kriti",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/confidential/oauth2/authorize",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"confidential",
+								"oauth2",
+								"authorize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "conf-client-creds-grant-type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "scope1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/confidential/oauth2/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"confidential",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "conf-password-grant-type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "scope1",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "kriti",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "kriti",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/confidential/oauth2/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"confidential",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "conf-refresh-token-to-access-token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refresh_token",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "scope1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/confidential/oauth2/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"confidential",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "conf-introspect-access-token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "token_type_hint",
+									"value": "access_token",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/confidential/oauth2/introspect",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"confidential",
+								"oauth2",
+								"introspect"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "oauth-secured-api",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer"
+					},
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{client_id}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/oauth-secured-api/getOAuthCtxVars",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"oauth-secured-api",
+						"getOAuthCtxVars"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,30 @@
+---
+product: "1.0.0"
+info:
+  name: "oauth-provider-product"
+  title: "OAuth Provider Product"
+  version: "1.0.0"
+visibility:
+  view:
+    enabled: true
+    type: "public"
+    tags: []
+    orgs: []
+  subscribe:
+    enabled: true
+    type: "authenticated"
+    tags: []
+    orgs: []
+apis:
+  accounts:
+    $ref: "accounts_1.0.0.yaml"
+  oauth2-provider:
+    $ref: "oauth2-provider_1.0.0.yaml"
+plans:
+  Silver:
+    title: "Silver"
+    description: "This plan only has 100 requests per hour limit"
+    approval: false
+    rate-limit:
+      hard-limit: false
+      value: "100/hour"
