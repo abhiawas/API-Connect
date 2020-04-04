@@ -1,13 +1,14 @@
 ---
 swagger: "2.0"
 info:
-  x-ibm-name: "dummyoauth"
-  title: "dummyOAuth"
+  x-ibm-name: "oauth-provider-3rd-party-authentication"
+  title: "OAuth Provider (3rd Party Authentication)"
   version: "1.0.0"
+  description: "This is an OAuth provider API which authenticates its user by redirecting\
+    \ them to another login page."
 schemes:
 - "https"
 host: "$(catalog.host)"
-basePath: "/dummyoauth"
 securityDefinitions:
   clientID:
     description: "application's client_id"
@@ -225,15 +226,12 @@ x-ibm-configuration:
     scopes:
       accounts: "you can see your accounts information from this app"
       payments: "you can make payments from this app"
-      morgage: "you can check your morgage status from this app"
     grants:
-    - "implicit"
-    - "password"
     - "accessCode"
     - "application"
     identity-extraction:
       type: "redirect"
-      redirect-url: "http://localhost:3000/login"
+      redirect-url: "https://myauthentication.mybluemix.net/login"
     authentication:
       x-ibm-authentication-url:
         url: "https://api.us-south.apiconnect.appdomain.cloud/xawdcvgmailcom-dev/sb/authenticationapi/identity"
@@ -241,7 +239,7 @@ x-ibm-configuration:
     authorization:
       type: "custom-form"
       custom-form:
-        url: "http://localhost:3000/auth"
+        url: "https://myauthentication.mybluemix.net/auth"
     access-token:
       ttl: 3600
     refresh-token:
@@ -277,3 +275,4 @@ definitions:
         type: "string"
       refresh_token:
         type: "string"
+basePath: "/"
