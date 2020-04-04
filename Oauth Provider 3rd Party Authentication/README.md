@@ -14,7 +14,9 @@ Prerequisites:
 
 3) cd /3rd party Authentication provider
 
-4) node index.js
+4) npm install
+
+5) node index.js
 
 Application will be running on http://localhost:8080 
 
