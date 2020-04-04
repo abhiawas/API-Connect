@@ -231,15 +231,13 @@ x-ibm-configuration:
     - "application"
     identity-extraction:
       type: "redirect"
-      redirect-url: "https://myauthentication.mybluemix.net/login"
+      redirect-url: "https://directpay.mybluemix.net/login"
     authentication:
       x-ibm-authentication-url:
-        url: "https://api.us-south.apiconnect.appdomain.cloud/xawdcvgmailcom-dev/sb/authenticationapi/identity"
+        url: "http://httpbin.org/basic-auth/Abhishek/Awasthi"
         tls-profile: ""
     authorization:
-      type: "custom-form"
-      custom-form:
-        url: "https://myauthentication.mybluemix.net/auth"
+      type: "authenticated"
     access-token:
       ttl: 3600
     refresh-token:

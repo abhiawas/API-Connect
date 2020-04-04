@@ -1,0 +1,20 @@
+<html lang="en" xml:lang="en">
+  <head><title>Request for permission</title></head>
+  <link href="/css/w3.css" rel="stylesheet" type="text/css">
+  <body class="customconsent">
+    <div class="w3-display-middle w3-card-4>
+      <div class="w3-container">
+        <form class="w3-container" method="post" enctype="application/x-www-form-urlencoded" action="authorize">
+          <AZ-INJECT-HIDDEN-INPUT-FIELDS/>
+          <p>Greeting...</p><DISPLAY-RESOURCE-OWNER/>
+          <p>This app </p><OAUTH-APPLICATION-NAME/><p> would like to access your data.</p>
+          <div class="w3-container">
+            <button class="w3-button w3-dark-grey" class="cancel" type="submit" name="approve" value="false">No Thanks</button>
+            <button class="w3-button w3-dark-grey" class="submit" type="submit" name="approve" value="true">Allow Access</button>
+          </div>
+        </form>
+      </div>
+      <AZ-INTERNAL-CUSTOM-FORM-ERROR/>
+    </div>
+  </body>
+</html>
